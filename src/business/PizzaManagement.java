@@ -1,10 +1,8 @@
 package business;
 
+import builder.PizzaBuilder;
 import dao.Bdd;
-import domain.Base;
-import domain.Cheese;
-import domain.Dough;
-import domain.Ingredient;
+import domain.*;
 
 import java.util.List;
 
@@ -13,8 +11,18 @@ public class PizzaManagement {
         Bdd bdd;
 
         List<Dough> doughs = Bdd.getDough();
-        List<Base> bases = Bdd.getBase();
         List<Ingredient> ingredients = Bdd.getIngredients();
-        List<Cheese> cheese = Bdd.getCheese();
+        List<Cheese> cheeses = Bdd.getCheese();
+
+        PizzaBuilder pizza = new PizzaBuilder();
+        pizza.setDough(doughs.get(1));
+        pizza.setBaseType(BaseType.TOMATOE);
+        pizza.addIngredient(ingredients.get(1));
+        pizza.addIngredient(ingredients.get(7));
+        pizza.addIngredient(ingredients.get(8));
+        pizza.addCheese(cheeses.get(1));
+        pizza.addCheese(cheeses.get(2));
+
+        Pizza p = pizza.build();
     }
 }

@@ -15,14 +15,6 @@ public class Bdd {
         doughs.add(new Dough("Chicago", 45,180, 6));
         return doughs;
     }
-    public static List<Base> getBase(){
-        List<Base> bases = new ArrayList<>();
-        bases.add(new Base("Bianca"));
-        bases.add(new Base("Tomate"));
-        bases.add(new Base("Crème Fraîche"));
-        bases.add(new Base("Mozzarella"));
-        return bases;
-    }
     public static List<Ingredient> getIngredients(){
         List<Ingredient> ingredients = new ArrayList<>();
         ingredients.add(new Ingredient("Jambon cuit", IngredientType.RED_MEAT));
@@ -46,6 +38,6 @@ public class Bdd {
         cheeses.add(new Cheese("Raclette", CheeseType.STRONG));
         cheeses.add(new Cheese("Mascarpone", CheeseType.LIGHT));
         cheeses.add(new Cheese("Ricotta", CheeseType.LIGHT));
-        return null;
+        return cheeses;
     }
 }
